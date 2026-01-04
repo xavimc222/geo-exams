@@ -27,7 +27,7 @@ function MapController({ lat, lng }) {
     return null;
 }
 
-export default function MapDisplay({ lat, lng, questionType = 'city', riverGeometry = null, riverName = null }) {
+export default function MapDisplay({ lat, lng, questionType = 'city', riverGeometry = null, riverName = null, hideMarker = false }) {
     // Default to political map for cities/regions, physical for rivers
     const defaultMapType = questionType === 'river' ? 'physical' : 'political';
     const [mapType, setMapType] = useState(() => defaultMapType);
@@ -160,18 +160,20 @@ export default function MapDisplay({ lat, lng, questionType = 'city', riverGeome
                             ? '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
                             : '&copy; <a href="https://opentopomap.org">OpenTopoMap</a> contributors'}
                     />
-                    <Marker position={[lat, lng]} />
-                    <Circle 
-                        center={[lat, lng]} 
-                        radius={33000}
-                        pathOptions={{
-                            fillColor: 'gray',
-                            fillOpacity: 1.0,
-                            color: 'gray',
-                            weight: 1,
-                            opacity: 0.8
-                        }}
-                    />
+                    {!hideMarker && <Marker position={[lat, lng]} />}
+                    {!hideMarker && (
+                        <Circle 
+                            center={[lat, lng]} 
+                            radius={33000}
+                            pathOptions={{
+                                fillColor: 'gray',
+                                fillOpacity: 1.0,
+                                color: 'gray',
+                                weight: 1,
+                                opacity: 0.8
+                            }}
+                        />
+                    )}
                     {/* Render river trace if provided */}
                     {riverCoordinates && (
                         <Polyline

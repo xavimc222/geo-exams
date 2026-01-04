@@ -12,6 +12,7 @@ export default function FilterPanel({ filters, onChange, language }) {
       region: 'Regiony',
       river: 'Řeky',
       facts: 'Fakta',
+      negative: 'Vylučovací otázky',
       countries: 'Země:',
       poland: 'Polsko',
       germany: 'Německo',
@@ -27,6 +28,7 @@ export default function FilterPanel({ filters, onChange, language }) {
       region: 'Regions',
       river: 'Rivers',
       facts: 'Facts',
+      negative: 'Negative questions',
       countries: 'Countries:',
       poland: 'Poland',
       germany: 'Germany',
@@ -97,7 +99,7 @@ export default function FilterPanel({ filters, onChange, language }) {
       <div style={{ marginBottom: '20px' }}>
         <div style={{ fontWeight: 'bold', marginBottom: '8px', color: '#333' }}>{t.categories}</div>
         <div style={{ display: 'flex', flexDirection: 'column', gap: '6px' }}>
-          {['city', 'region', 'river', 'facts'].map(category => (
+          {['city', 'region', 'river', 'facts', 'negative'].map(category => (
             <label key={category} style={{ display: 'flex', alignItems: 'center', cursor: 'pointer', color: '#333' }}>
               <input
                 type="checkbox"

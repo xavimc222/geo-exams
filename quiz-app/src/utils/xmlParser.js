@@ -127,7 +127,10 @@ export function extractCountryFacts(parsedXML) {
       country_english,
       country_czech,
       intro_czech: czechText,
-      intro_english: englishText
+      intro_english: englishText,
+      // Add country coordinates for map centering
+      lat: parseFloat(introItem.lat),
+      lng: parseFloat(introItem.long)
     };
     
     // Extract number of regions (Czech text)

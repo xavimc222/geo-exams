@@ -46,12 +46,12 @@ function App() {
 
   const generateNewQuestion = useCallback(() => {
     const filteredLocations = applyFilters(allLocations, filters);
-    const includeFactQuestions = filters.categories.includes('facts');
     
     const question = generateQuestion(
+      allLocations,
       filteredLocations,
       countryFacts,
-      includeFactQuestions,
+      filters,
       language
     );
     
@@ -100,8 +100,7 @@ function App() {
     
     // Generate new question with updated filters
     const filteredLocations = applyFilters(allLocations, newFilters);
-    const includeFactQuestions = newFilters.categories.includes('facts');
-    const question = generateQuestion(filteredLocations, countryFacts, includeFactQuestions, language);
+    const question = generateQuestion(allLocations, filteredLocations, countryFacts, newFilters, language);
     setCurrentQuestion(question);
   };
 
@@ -110,8 +109,7 @@ function App() {
     // Generate new question with new language
     setTimeout(() => {
       const filteredLocations = applyFilters(allLocations, filters);
-      const includeFactQuestions = filters.categories.includes('facts');
-      const question = generateQuestion(filteredLocations, countryFacts, includeFactQuestions, newLanguage);
+      const question = generateQuestion(allLocations, filteredLocations, countryFacts, filters, newLanguage);
       setCurrentQuestion(question);
       setFeedback(null);
     }, 0);

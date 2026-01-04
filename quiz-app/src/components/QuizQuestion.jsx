@@ -20,22 +20,23 @@ export default function QuizQuestion({ question, onAnswer, feedback, language })
   return (
     <div>
       {/* Map Display for location questions */}
-      {question.questionType === 'location' && (
+      {(question.questionType === 'location' || question.questionType === 'negative_location') && (
         <div style={{ marginBottom: '30px' }}>
           <MapDisplay 
-            lat={question.location.lat} 
-            lng={question.location.lng}
+            lat={question.questionType === 'location' ? question.location.lat : question.lat} 
+            lng={question.questionType === 'location' ? question.location.lng : question.lng}
             questionType={question.locationType || 'city'}
             riverGeometry={
-              question.locationType === 'river' && question.location.geometry 
+              question.locationType === 'river' && question.location && question.location.geometry 
                 ? question.location.geometry 
                 : null
             }
             riverName={
-              question.locationType === 'river' 
+              question.locationType === 'river' && question.location
                 ? (language === 'czech' ? question.location.name_czech : question.location.name_english)
                 : null
             }
+            hideMarker={question.hideMarker || false}
           />
         </div>
       )}

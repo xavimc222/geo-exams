@@ -217,9 +217,135 @@ export function generateFactQuestion(countryFacts, language) {
   };
 }
 
-export function generateQuestion(filteredLocations, countryFacts, includeFactQuestions, language) {
+export function generateNegativeLocationQuestion(filteredLocations, countryFacts, language) {
+  // Only use cities and regions (not rivers as they can cross countries)
+  const validLocations = filteredLocations.filter(loc => loc.type === 'city' || loc.type === 'region');
+  
+  if (validLocations.length < 4) {
+    return null; // Not enough items to create a question
+  }
+  
+  // Group locations by country
+  const locationsByCountry = {};
+  validLocations.forEach(location => {
+    const country = location.country_english;
+    if (!locationsByCountry[country]) {
+      locationsByCountry[country] = [];
+    }
+    locationsByCountry[country].push(location);
+  });
+  
+  // Find countries that have at least 3 items of the same type
+  const availableCountries = [];
+  Object.entries(locationsByCountry).forEach(([country, locations]) => {
+    const citiesCount = locations.filter(loc => loc.type === 'city').length;
+    const regionsCount = locations.filter(loc => loc.type === 'region').length;
+    
+    if (citiesCount >= 3) {
+      availableCountries.push({ country, type: 'city', locations: locations.filter(loc => loc.type === 'city') });
+    }
+    if (regionsCount >= 3) {
+      availableCountries.push({ country, type: 'region', locations: locations.filter(loc => loc.type === 'region') });
+    }
+  });
+  
+  if (availableCountries.length === 0) {
+    return null; // No country has enough items of the same type
+  }
+  
+  // Pick a target country and type
+  const targetCountryData = randomPick(availableCountries);
+  const targetCountry = targetCountryData.country;
+  const locationType = targetCountryData.type;
+  
+  // Get 3 items from target country
+  const targetCountryItems = randomPick(targetCountryData.locations, 3);
+  
+  // Get all items of same type from OTHER countries
+  const otherCountryItems = validLocations.filter(loc => 
+    loc.type === locationType && loc.country_english !== targetCountry
+  );
+  
+  if (otherCountryItems.length === 0) {
+    return null; // No items of same type in other countries
+  }
+  
+  // Pick 1 item from other countries as the correct answer
+  const correctAnswer = randomPick(otherCountryItems);
+  
+  // Create all options and shuffle
+  const allOptions = [...targetCountryItems, correctAnswer];
+  const shuffledOptions = shuffle(allOptions);
+  const correctIndex = shuffledOptions.findIndex(opt => opt.id === correctAnswer.id);
+  
+  // Create question text with Czech declension handling
+  const typeTranslations = {
+    czech: {
+      city: 'město',
+      region: 'region'
+    },
+    english: {
+      city: 'city',
+      region: 'region'
+    }
+  };
+  
+  const typeName = typeTranslations[language][locationType] || locationType;
+  const countryName = language === 'czech' ? targetCountryItems[0].country_czech : targetCountry;
+  
+  // Simple Czech declension for the question
+  let question;
+  if (language === 'czech') {
+    // Use neutral phrasing to avoid complex declension
+    question = `Které ${typeName} NEPATŘÍ do země: ${countryName}?`;
+  } else {
+    question = `Which ${typeName} is NOT in ${countryName}?`;
+  }
+  
+  // Find target country facts for map centering
+  const targetCountryFact = countryFacts.find(fact => fact.country_english === targetCountry);
+  
+  return {
+    questionType: 'negative_location',
+    locationType,
+    targetCountry,
+    // Use country coordinates for map centering
+    lat: targetCountryFact ? targetCountryFact.lat : targetCountryItems[0].lat,
+    lng: targetCountryFact ? targetCountryFact.lng : targetCountryItems[0].lng,
+    question,
+    options: shuffledOptions.map(opt => opt[`name_${language}`]),
+    correctAnswer: correctAnswer[`name_${language}`],
+    correctIndex,
+    hideMarker: true // Flag to hide the marker on the map
+  };
+}
+
+export function generateQuestion(allLocations, filteredLocations, countryFacts, filters, language) {
   const availableTypes = [];
   
+  const includeFactQuestions = filters.categories.includes('facts');
+  const includeNegativeQuestions = filters.categories.includes('negative');
+  
+  // For negative questions, we need to use all cities and regions from enabled countries
+  // regardless of what location categories are selected
+  if (includeNegativeQuestions) {
+    const negativeFilteredLocations = allLocations.filter(loc => {
+      // Apply country filter
+      const countryMatch = filters.countries.length === 0 || filters.countries.includes(loc.country_english);
+      // Apply origin filter if needed
+      const originMatch = !filters.originalOnly || loc.origin === 'original';
+      // Only cities and regions for negative questions
+      const typeMatch = loc.type === 'city' || loc.type === 'region';
+      
+      return countryMatch && originMatch && typeMatch;
+    });
+    
+    if (negativeFilteredLocations.length >= 4) {
+      availableTypes.push('negative_location');
+    }
+  }
+  
+  // Regular location questions use the normal filtered locations
   if (filteredLocations.length >= 4) {
     availableTypes.push('location');
   }
@@ -237,6 +363,15 @@ export function generateQuestion(filteredLocations, countryFacts, includeFactQue
   
   if (questionType === 'location') {
     return generateLocationQuestion(filteredLocations, language);
+  } else if (questionType === 'negative_location') {
+    // Use special filtering for negative questions
+    const negativeFilteredLocations = allLocations.filter(loc => {
+      const countryMatch = filters.countries.length === 0 || filters.countries.includes(loc.country_english);
+      const originMatch = !filters.originalOnly || loc.origin === 'original';
+      const typeMatch = loc.type === 'city' || loc.type === 'region';
+      return countryMatch && originMatch && typeMatch;
+    });
+    return generateNegativeLocationQuestion(negativeFilteredLocations, countryFacts, language);
   } else {
     return generateFactQuestion(countryFacts, language);
   }
