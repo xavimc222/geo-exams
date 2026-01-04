@@ -61,8 +61,12 @@ function App() {
 
   // Generate initial question when data loads
   useEffect(() => {
-    if (allLocations.length > 0 && currentQuestion === null) {
-      generateNewQuestion();
+    if (allLocations.length > 0 && !currentQuestion) {
+      // Use setTimeout to avoid calling setState directly in effect
+      const timer = setTimeout(() => {
+        generateNewQuestion();
+      }, 0);
+      return () => clearTimeout(timer);
     }
   }, [allLocations, currentQuestion, generateNewQuestion]);
 

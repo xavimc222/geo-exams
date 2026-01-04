@@ -26,6 +26,16 @@ export default function QuizQuestion({ question, onAnswer, feedback, language })
             lat={question.location.lat} 
             lng={question.location.lng}
             questionType={question.locationType || 'city'}
+            riverGeometry={
+              question.locationType === 'river' && question.location.geometry 
+                ? question.location.geometry 
+                : null
+            }
+            riverName={
+              question.locationType === 'river' 
+                ? (language === 'czech' ? question.location.name_czech : question.location.name_english)
+                : null
+            }
           />
         </div>
       )}

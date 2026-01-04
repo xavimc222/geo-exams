@@ -19,6 +19,29 @@ export async function loadAndParseXML() {
   }
 }
 
+export async function loadRiverGeometries() {
+  try {
+    const response = await fetch('/data/rivers.geojson');
+    const riverData = await response.json();
+    
+    // Create a mapping between river names and their geometries
+    const riverMap = new Map();
+    
+    riverData.features.forEach(feature => {
+      const englishName = feature.properties.name;
+      const czechName = feature.properties.name_czech;
+      
+      riverMap.set(englishName, feature.geometry);
+      riverMap.set(czechName, feature.geometry);
+    });
+    
+    return riverMap;
+  } catch (error) {
+    console.error('Error loading river geometries:', error);
+    return new Map();
+  }
+}
+
 export function extractLocations(parsedXML) {
   const locations = [];
   const maps = parsedXML.maps.map;
@@ -58,6 +81,18 @@ export function extractLocations(parsedXML) {
         lng: parseFloat(item.long),
         origin: item.origin || 'unknown'
       };
+
+      // Parse coordinates for rivers
+      if (item.type === 'river' && item.coordinates) {
+        const coordPairs = item.coordinates.split(';');
+        location.geometry = {
+          type: 'LineString',
+          coordinates: coordPairs.map(pair => {
+            const [lng, lat] = pair.split(',');
+            return [parseFloat(lng), parseFloat(lat)];
+          })
+        };
+      }
       
       locations.push(location);
     });

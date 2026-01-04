@@ -7,11 +7,11 @@
         </text_item>
 
         <!-- Rivers -->
-        <text_item type="river" location="on_map" position="central" label_on_line="true" origin="original" lat="52.2297" long="21.0122">
+        <text_item type="river" location="on_map" position="central" label_on_line="true" origin="original" lat="52.2297" long="21.0122" coordinates="23.8965,49.6822;23.5500,50.0647;21.0122,52.2297;20.4264,52.4069;19.6658,52.4725;18.6539,53.1192;18.5560,54.0685;18.9571,54.3520">
             <czech>Visla</czech>
             <english>Vistula</english>
         </text_item>
-        <text_item type="river" location="supplemental" position="west" origin="original" lat="53.4285" long="14.5528">
+        <text_item type="river" location="supplemental" position="west" origin="original" lat="53.4285" long="14.5528" coordinates="17.9213,49.6822;17.0385,51.1079;15.5062,51.9356;14.5528,53.4285;14.1213,53.8567">
             <czech>Odra</czech>
             <english>Oder</english>
         </text_item>
@@ -157,11 +157,11 @@
         </text_item>
 
         <!-- Rivers -->
-        <text_item type="river" location="supplemental" position="north" origin="supplemental" lat="48.3069" long="14.2858">
+        <text_item type="river" location="supplemental" position="north" origin="supplemental" lat="48.3069" long="14.2858" coordinates="8.1543,47.7749;9.1829,48.7758;11.5820,48.1351;13.0550,47.8095;14.2858,48.3069;16.3738,48.2082;19.0404,47.4979;21.2269,45.2435;28.9637,45.2565;29.6038,45.0355">
             <czech>Dunaj</czech>
             <english>Danube</english>
         </text_item>
-        <text_item type="river" location="supplemental" position="west" origin="supplemental" lat="47.2692" long="11.4041">
+        <text_item type="river" location="supplemental" position="west" origin="supplemental" lat="47.2692" long="11.4041" coordinates="10.2178,46.8182;11.4041,47.2692;12.1372,47.8095;13.0324,48.2506">
             <czech>Inn</czech>
             <english>Inn</english>
         </text_item>
@@ -251,11 +251,11 @@
         </text_item>
 
         <!-- Rivers -->
-        <text_item type="river" location="supplemental" position="west" origin="supplemental" lat="50.9375" long="6.9603">
+        <text_item type="river" location="supplemental" position="west" origin="supplemental" lat="50.9375" long="6.9603" coordinates="8.2398,47.5596;7.4474,47.5596;7.7519,48.5839;8.2473,49.9929;8.6821,50.1109;6.9603,50.9375;6.7735,51.2277;6.0829,51.4416;5.9699,51.9851;6.2044,52.1326;4.8980,51.9851">
             <czech>Rýn</czech>
             <english>Rhine</english>
         </text_item>
-        <text_item type="river" location="supplemental" position="east" origin="supplemental" lat="53.5488" long="9.9872">
+        <text_item type="river" location="supplemental" position="east" origin="supplemental" lat="53.5488" long="9.9872" coordinates="15.7394,50.7759;13.7373,51.0504;12.3731,51.3397;11.6276,52.1205;10.6865,52.8755;9.9872,53.5488;9.1800,53.8655">
             <czech>Labe</czech>
             <english>Elbe</english>
         </text_item>

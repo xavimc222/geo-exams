@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { MapContainer, TileLayer, Marker, Circle, useMap } from 'react-leaflet';
+import { MapContainer, TileLayer, Marker, Circle, Polyline, useMap } from 'react-leaflet';
 import 'leaflet/dist/leaflet.css';
 import L from 'leaflet';
 
@@ -27,15 +27,24 @@ function MapController({ lat, lng }) {
     return null;
 }
 
-export default function MapDisplay({ lat, lng, questionType = 'city' }) {
+export default function MapDisplay({ lat, lng, questionType = 'city', riverGeometry = null, riverName = null }) {
     // Default to political map for cities/regions, physical for rivers
     const defaultMapType = questionType === 'river' ? 'physical' : 'political';
-    const [mapType, setMapType] = useState(defaultMapType);
+    const [mapType, setMapType] = useState(() => defaultMapType);
 
-    // Reset map type when question type changes
+    // Update map type when questionType changes
+    const currentDefaultMapType = questionType === 'river' ? 'physical' : 'political';
+    
     useEffect(() => {
-        setMapType(defaultMapType);
-    }, [questionType, defaultMapType]);
+        setMapType(currentDefaultMapType);
+    }, [currentDefaultMapType]);
+
+    // Convert river geometry coordinates for Leaflet (if provided)
+    const riverCoordinates = riverGeometry && riverGeometry.coordinates
+        ? riverGeometry.coordinates.map(coord => [coord[1], coord[0]]) // Convert [lng, lat] to [lat, lng]
+        : null;
+
+
     
     if (!lat || !lng) {
         return (
@@ -65,6 +74,25 @@ export default function MapDisplay({ lat, lng, questionType = 'city' }) {
     
     return (
         <div style={{ position: 'relative' }}>
+            {/* River Name Display */}
+            {riverName && (
+                <div style={{
+                    position: 'absolute',
+                    top: '10px',
+                    left: '10px',
+                    zIndex: 1000,
+                    backgroundColor: 'rgba(0, 123, 255, 0.9)',
+                    color: 'white',
+                    padding: '8px 16px',
+                    borderRadius: '6px',
+                    fontSize: '16px',
+                    fontWeight: 'bold',
+                    boxShadow: '0 2px 6px rgba(0,0,0,0.3)'
+                }}>
+                    🌊 {riverName}
+                </div>
+            )}
+            
             {/* Map Type Toggle Button */}
             <div style={{
                 position: 'absolute',
@@ -135,7 +163,7 @@ export default function MapDisplay({ lat, lng, questionType = 'city' }) {
                     <Marker position={[lat, lng]} />
                     <Circle 
                         center={[lat, lng]} 
-                        radius={16500}
+                        radius={33000}
                         pathOptions={{
                             fillColor: 'gray',
                             fillOpacity: 1.0,
@@ -144,6 +172,17 @@ export default function MapDisplay({ lat, lng, questionType = 'city' }) {
                             opacity: 0.8
                         }}
                     />
+                    {/* Render river trace if provided */}
+                    {riverCoordinates && (
+                        <Polyline
+                            positions={riverCoordinates}
+                            pathOptions={{
+                                color: 'blue',
+                                weight: 5,
+                                opacity: 0.7
+                            }}
+                        />
+                    )}
                     <MapController lat={lat} lng={lng} />
                 </MapContainer>
             </div>

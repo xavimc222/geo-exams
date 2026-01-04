@@ -59,7 +59,7 @@ export function generateLocationQuestion(filteredLocations, language) {
   return {
     questionType: 'location',
     locationType: correct.type,
-    location: { lat: correct.lat, lng: correct.lng },
+    location: correct, // Pass the entire location object to preserve geometry
     country: correct.country_english,
     question,
     options: shuffledOptions.map(opt => opt[`name_${language}`]),
