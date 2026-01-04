@@ -9,7 +9,7 @@ import ScoreDisplay from './components/ScoreDisplay';
 import './App.css';
 
 function App() {
-  const [language, setLanguage] = useState('english');
+  const [language, setLanguage] = useState('czech');
   const [allLocations, setAllLocations] = useState([]);
   const [countryFacts, setCountryFacts] = useState([]);
   const [filters, setFilters] = useState({
