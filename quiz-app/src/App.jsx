@@ -14,7 +14,7 @@ function App() {
   const [countryFacts, setCountryFacts] = useState([]);
   const [filters, setFilters] = useState({
     originalOnly: false,
-    categories: ['city', 'region', 'river', 'facts'],
+    categories: ['city', 'region', 'river', 'facts', 'negative'],
     countries: ['Poland', 'Germany', 'Austria']
   });
   const [currentQuestion, setCurrentQuestion] = useState(null);
