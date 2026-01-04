@@ -81,6 +81,7 @@ export function generateFactQuestion(countryFacts, language) {
   if (countryFacts.some(f => f.area_km2)) factTypes.push('area_km2');
   if (countryFacts.some(f => f.population_millions)) factTypes.push('population_millions');
   if (countryFacts.some(f => f.largest_river_czech)) factTypes.push('largest_river');
+  if (countryFacts.some(f => f.capital_czech)) factTypes.push('capital_city');
   
   if (factTypes.length === 0) {
     return null;
@@ -196,6 +197,25 @@ export function generateFactQuestion(countryFacts, language) {
       // Remove correct answer from pool
       const wrongRivers = allRivers.filter(r => r !== correctAnswer);
       const selectedWrong = randomPick(wrongRivers, 3);
+      
+      options = shuffle([correctAnswer, ...selectedWrong]);
+      correctIndex = options.indexOf(correctAnswer);
+      break;
+    }
+
+    case 'capital_city': {
+      question = language === 'czech'
+        ? `Jaké je hlavní město země ${country.country_czech}?`
+        : `What is the capital city of ${country.country_english}?`;
+      
+      correctAnswer = language === 'czech' ? country.capital_czech : country.capital_english;
+      
+      // Get capitals from other countries
+      const otherCapitals = countryFacts
+        .filter(cf => cf.country_english !== country.country_english && cf.capital_english)
+        .map(cf => language === 'czech' ? cf.capital_czech : cf.capital_english);
+      
+      const selectedWrong = randomPick(otherCapitals, Math.min(3, otherCapitals.length));
       
       options = shuffle([correctAnswer, ...selectedWrong]);
       correctIndex = options.indexOf(correctAnswer);
@@ -320,6 +340,57 @@ export function generateNegativeLocationQuestion(filteredLocations, countryFacts
   };
 }
 
+export function generateInverseLocationQuestion(filteredLocations, countryFacts, language) {
+  // Only use cities and regions (not rivers as they can cross countries)
+  const validLocations = filteredLocations.filter(loc => loc.type === 'city' || loc.type === 'region');
+  
+  if (validLocations.length === 0) {
+    return null;
+  }
+
+  // Pick a random location
+  const subject = randomPick(validLocations);
+  
+  const typeTranslations = {
+    czech: {
+      city: 'město',
+      region: 'region'
+    },
+    english: {
+      city: 'city',
+      region: 'region'
+    }
+  };
+
+  const typeName = typeTranslations[language][subject.type] || subject.type;
+  const question = language === 'czech'
+    ? `Ve které zemi se nachází ${typeName} ${subject.name_czech}?`
+    : `In which country is the ${typeName} ${subject.name_english}?`;
+
+  const correctAnswer = language === 'czech' ? subject.country_czech : subject.country_english;
+  
+  // Get other countries from available country facts
+  const otherCountries = countryFacts
+    .filter(cf => cf.country_english !== subject.country_english)
+    .map(cf => language === 'czech' ? cf.country_czech : cf.country_english);
+
+  const selectedWrong = randomPick(otherCountries, Math.min(3, otherCountries.length));
+  
+  const options = shuffle([correctAnswer, ...selectedWrong]);
+  const correctIndex = options.indexOf(correctAnswer);
+
+  return {
+    questionType: 'location', // Reuse location type for map display
+    locationType: subject.type,
+    location: subject,
+    country: subject.country_english,
+    question,
+    options,
+    correctAnswer,
+    correctIndex
+  };
+}
+
 export function generateQuestion(allLocations, filteredLocations, countryFacts, filters, language) {
   const availableTypes = [];
   
@@ -353,6 +424,12 @@ export function generateQuestion(allLocations, filteredLocations, countryFacts, 
   // Regular location questions use the normal filtered locations
   if (filteredLocations.length >= 4) {
     availableTypes.push('location');
+    
+    // Add inverse location questions if we have enough countries to provide options
+    const validInverseLocations = filteredLocations.filter(loc => loc.type === 'city' || loc.type === 'region');
+    if (validInverseLocations.length > 0 && filteredCountryFacts.length >= 2) {
+      availableTypes.push('inverse_location');
+    }
   }
   
   // Use filtered country facts for fact questions
@@ -369,6 +446,8 @@ export function generateQuestion(allLocations, filteredLocations, countryFacts, 
   
   if (questionType === 'location') {
     return generateLocationQuestion(filteredLocations, language);
+  } else if (questionType === 'inverse_location') {
+    return generateInverseLocationQuestion(filteredLocations, filteredCountryFacts, language);
   } else if (questionType === 'negative_location') {
     // Use special filtering for negative questions
     const negativeFilteredLocations = allLocations.filter(loc => {

@@ -132,6 +132,16 @@ export function extractCountryFacts(parsedXML) {
       lat: parseFloat(introItem.lat),
       lng: parseFloat(introItem.long)
     };
+
+    // Extract capital city
+    const capitalCzechMatch = czechText.match(/Hlavní město:\s*([^.]+)\./i);
+    if (capitalCzechMatch) {
+      fact.capital_czech = capitalCzechMatch[1].trim();
+    }
+    const capitalEnglishMatch = englishText.match(/Capital city:\s*([^.]+)\./i);
+    if (capitalEnglishMatch) {
+      fact.capital_english = capitalEnglishMatch[1].trim();
+    }
     
     // Extract number of regions (Czech text)
     const regionsMatch = czechText.match(/(\d+)\s+(vojvodství|spolkových zemí)/i);
