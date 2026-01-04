@@ -2,8 +2,8 @@
     <map id="image1" country_czech="Polsko" country_english="Poland">
         <!-- Introduction Text -->
         <text_item type="intro" location="header" position="top" origin="original" lat="52.2297" long="21.0122">
-            <czech>Polsko: členění - 16 vojvodství (kraje) – není to federace. Rozloha: 312 tis km² (9. MÍSTO). Počet obyvatel: 38 mil. Největší řeka: Visla, další: Odra.</czech>
-            <english>Poland: division - 16 voivodeships (regions) – not a federation. Area: 312k km² (9th PLACE). Population: 38 mil. Largest river: Vistula, others: Oder.</english>
+            <czech>Polsko: členění - 16 vojvodství (kraje) – není to federace. Hlavní město: Varšava. Rozloha: 312 tis km² (9. MÍSTO). Počet obyvatel: 38 mil. Největší řeka: Visla, další: Odra.</czech>
+            <english>Poland: division - 16 voivodeships (regions) – not a federation. Capital city: Warsaw. Area: 312k km² (9th PLACE). Population: 38 mil. Largest river: Vistula, others: Oder.</english>
         </text_item>
 
         <!-- Rivers -->
@@ -152,8 +152,8 @@
     <map id="image2" country_czech="Rakousko" country_english="Austria">
         <!-- Introduction Text -->
         <text_item type="intro" location="generated" position="top" origin="generated" lat="48.2082" long="16.3738">
-            <czech>Rakousko: členění - 9 spolkových zemí – je to federace. Rozloha: 84 tis km². Počet obyvatel: 9 mil. Největší řeka: Dunaj, další: Inn.</czech>
-            <english>Austria: division - 9 federal states – it is a federation. Area: 84,000 km². Population: 9 mil. Largest river: Danube, others: Inn.</english>
+            <czech>Rakousko: členění - 9 spolkových zemí – je to federace. Hlavní město: Vídeň. Rozloha: 84 tis km². Počet obyvatel: 9 mil. Největší řeka: Dunaj, další: Inn.</czech>
+            <english>Austria: division - 9 federal states – it is a federation. Capital city: Vienna. Area: 84,000 km². Population: 9 mil. Largest river: Danube, others: Inn.</english>
         </text_item>
 
         <!-- Rivers -->
@@ -246,8 +246,8 @@
     <map id="image3" country_czech="Německo" country_english="Germany">
         <!-- Introduction Text -->
         <text_item type="intro" location="generated" position="top" origin="generated" lat="52.5200" long="13.4050">
-            <czech>Německo: členění - 16 spolkových zemí – je to federace. Rozloha: 357 tis km². Počet obyvatel: 84 mil. Největší řeka: Rýn, další: Labe, Dunaj.</czech>
-            <english>Germany: division - 16 federal states – it is a federation. Area: 357,000 km². Population: 84 mil. Largest river: Rhine, others: Elbe, Danube.</english>
+            <czech>Německo: členění - 16 spolkových zemí – je to federace. Hlavní město: Berlín. Rozloha: 357 tis km². Počet obyvatel: 84 mil. Největší řeka: Rýn, další: Labe, Dunaj.</czech>
+            <english>Germany: division - 16 federal states – it is a federation. Capital city: Berlin. Area: 357,000 km². Population: 84 mil. Largest river: Rhine, others: Elbe, Danube.</english>
         </text_item>
 
         <!-- Rivers -->
@@ -406,6 +406,154 @@
         <text_item type="city" location="on_map" position="south" origin="original" lat="48.1351" long="11.5820">
             <czech>Mnichov</czech>
             <english>Munich</english>
+        </text_item>
+    </map>
+
+    <map id="image4" country_czech="Slovensko" country_english="Slovakia">
+        <!-- Introduction Text -->
+        <text_item type="intro" location="header" position="top" origin="generated" lat="48.1486" long="17.1077">
+            <czech>Slovensko: členění - 8 krajů – není to federace. Hlavní město: Bratislava. Rozloha: 49 tis km². Počet obyvatel: 5,4 mil. Největší řeka: Dunaj, další: Váh.</czech>
+            <english>Slovakia: division - 8 regions – not a federation. Capital city: Bratislava. Area: 49,000 km². Population: 5.4 mil. Largest river: Danube, others: Vah.</english>
+        </text_item>
+
+        <!-- Rivers -->
+        <text_item type="river" location="supplemental" position="south" origin="supplemental" lat="47.7500" long="18.1000" coordinates="16.9000,48.1000;17.5000,47.8000;18.8000,47.8000">
+            <czech>Dunaj</czech>
+            <english>Danube</english>
+        </text_item>
+        <text_item type="river" location="supplemental" position="west" origin="supplemental" lat="48.8000" long="18.0000" coordinates="19.9000,49.0000;19.0000,49.2000;18.8000,49.1000;17.9000,48.7000;18.0000,47.9000">
+            <czech>Váh</czech>
+            <english>Vah</english>
+        </text_item>
+
+        <!-- Regions (Kraje) -->
+        <text_item type="region" location="supplemental" position="west" origin="supplemental" lat="48.3000" long="17.2000">
+            <czech>Bratislavský kraj</czech>
+            <english>Bratislava Region</english>
+        </text_item>
+        <text_item type="region" location="supplemental" position="west" origin="supplemental" lat="48.4000" long="17.6000">
+            <czech>Trnavský kraj</czech>
+            <english>Trnava Region</english>
+        </text_item>
+        <text_item type="region" location="supplemental" position="north-west" origin="supplemental" lat="48.9000" long="18.0000">
+            <czech>Trenčínský kraj</czech>
+            <english>Trenčín Region</english>
+        </text_item>
+        <text_item type="region" location="supplemental" position="south-west" origin="supplemental" lat="48.3000" long="18.1000">
+            <czech>Nitranský kraj</czech>
+            <english>Nitra Region</english>
+        </text_item>
+        <text_item type="region" location="supplemental" position="north" origin="supplemental" lat="49.2000" long="19.3000">
+            <czech>Žilinský kraj</czech>
+            <english>Žilina Region</english>
+        </text_item>
+        <text_item type="region" location="supplemental" position="central" origin="supplemental" lat="48.7000" long="19.1500">
+            <czech>Banskobystrický kraj</czech>
+            <english>Banská Bystrica Region</english>
+        </text_item>
+        <text_item type="region" location="supplemental" position="north-east" origin="supplemental" lat="49.0000" long="21.2000">
+            <czech>Prešovský kraj</czech>
+            <english>Prešov Region</english>
+        </text_item>
+        <text_item type="region" location="supplemental" position="south-east" origin="supplemental" lat="48.7000" long="21.2500">
+            <czech>Košický kraj</czech>
+            <english>Košice Region</english>
+        </text_item>
+
+        <!-- Cities -->
+        <text_item type="city" location="on_map" position="south-west" origin="generated" lat="48.1486" long="17.1077">
+            <czech>Bratislava</czech>
+            <english>Bratislava</english>
+        </text_item>
+        <text_item type="city" location="on_map" position="east" origin="generated" lat="48.7164" long="21.2611">
+            <czech>Košice</czech>
+            <english>Košice</english>
+        </text_item>
+        <text_item type="city" location="on_map" position="north-east" origin="generated" lat="48.9984" long="21.2407">
+            <czech>Prešov</czech>
+            <english>Prešov</english>
+        </text_item>
+        <text_item type="city" location="on_map" position="north" origin="generated" lat="49.2231" long="18.7394">
+            <czech>Žilina</czech>
+            <english>Žilina</english>
+        </text_item>
+        <text_item type="city" location="supplemental" position="central" origin="generated" lat="48.7363" long="19.1462">
+            <czech>Banská Bystrica</czech>
+            <english>Banská Bystrica</english>
+        </text_item>
+        <text_item type="city" location="supplemental" position="south-west" origin="generated" lat="48.3061" long="18.0764">
+            <czech>Nitra</czech>
+            <english>Nitra</english>
+        </text_item>
+        <text_item type="city" location="supplemental" position="west" origin="generated" lat="48.3709" long="17.5833">
+            <czech>Trnava</czech>
+            <english>Trnava</english>
+        </text_item>
+        <text_item type="city" location="supplemental" position="north-west" origin="generated" lat="48.8945" long="18.0444">
+            <czech>Trenčín</czech>
+            <english>Trenčín</english>
+        </text_item>
+    </map>
+
+    <map id="image5" country_czech="Slovinsko" country_english="Slovenia">
+        <!-- Introduction Text -->
+        <text_item type="intro" location="header" position="top" origin="generated" lat="46.0569" long="14.5058">
+            <czech>Slovinsko: členění - 212 občin (obcí) – není to federace. Hlavní město: Lublaň. Rozloha: 20 tis km². Počet obyvatel: 2,1 mil. Největší řeka: Sáva, další: Dráva.</czech>
+            <english>Slovenia: division - 212 municipalities – not a federation. Capital city: Ljubljana. Area: 20,000 km². Population: 2.1 mil. Largest river: Sava, others: Drava.</english>
+        </text_item>
+
+        <!-- Rivers -->
+        <text_item type="river" location="supplemental" position="central" origin="supplemental" lat="46.0000" long="15.0000" coordinates="14.0000,46.3000;14.5000,46.1000;15.5000,46.0000">
+            <czech>Sáva</czech>
+            <english>Sava</english>
+        </text_item>
+        <text_item type="river" location="supplemental" position="north-east" origin="supplemental" lat="46.5000" long="15.6000" coordinates="15.0000,46.6000;15.6000,46.5500;16.0000,46.4000">
+            <czech>Dráva</czech>
+            <english>Drava</english>
+        </text_item>
+
+        <!-- Regions (Statistical Regions) -->
+        <text_item type="region" location="supplemental" position="north-east" origin="supplemental" lat="46.6500" long="16.1500">
+            <czech>Pomurský region</czech>
+            <english>Mura Region</english>
+        </text_item>
+        <text_item type="region" location="supplemental" position="north-east" origin="supplemental" lat="46.4500" long="15.8000">
+            <czech>Podrávský region</czech>
+            <english>Drava Region</english>
+        </text_item>
+        <text_item type="region" location="supplemental" position="central" origin="supplemental" lat="46.0500" long="14.5000">
+            <czech>Středoslovinský region</czech>
+            <english>Central Slovenia Region</english>
+        </text_item>
+        <text_item type="region" location="supplemental" position="north-west" origin="supplemental" lat="46.3000" long="14.1000">
+            <czech>Hornokraňský region</czech>
+            <english>Upper Carniola Region</english>
+        </text_item>
+        <text_item type="region" location="supplemental" position="south-west" origin="supplemental" lat="45.7000" long="14.0000">
+            <czech>Pobřežně-krasový region</czech>
+            <english>Coastal-Karst Region</english>
+        </text_item>
+
+        <!-- Cities -->
+        <text_item type="city" location="on_map" position="central" origin="generated" lat="46.0569" long="14.5058">
+            <czech>Lublaň</czech>
+            <english>Ljubljana</english>
+        </text_item>
+        <text_item type="city" location="on_map" position="north-east" origin="generated" lat="46.5547" long="15.6459">
+            <czech>Maribor</czech>
+            <english>Maribor</english>
+        </text_item>
+        <text_item type="city" location="on_map" position="central-east" origin="generated" lat="46.2397" long="15.2677">
+            <czech>Celje</czech>
+            <english>Celje</english>
+        </text_item>
+        <text_item type="city" location="on_map" position="north-west" origin="generated" lat="46.2389" long="14.3555">
+            <czech>Kranj</czech>
+            <english>Kranj</english>
+        </text_item>
+        <text_item type="city" location="on_map" position="south-west" origin="generated" lat="45.5481" long="13.7302">
+            <czech>Koper</czech>
+            <english>Koper</english>
         </text_item>
     </map>
 </maps>

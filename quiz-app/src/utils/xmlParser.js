@@ -2,7 +2,7 @@ import { XMLParser } from 'fast-xml-parser';
 
 export async function loadAndParseXML() {
   try {
-    const response = await fetch('/data/poland-germany-austria.xml');
+    const response = await fetch('/data/source.xml');
     const xmlText = await response.text();
     
     const parser = new XMLParser({
