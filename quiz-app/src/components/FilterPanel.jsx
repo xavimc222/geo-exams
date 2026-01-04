@@ -15,7 +15,9 @@ export default function FilterPanel({ filters, onChange, language }) {
       countries: 'Země:',
       poland: 'Polsko',
       germany: 'Německo',
-      austria: 'Rakousko'
+      austria: 'Rakousko',
+      slovakia: 'Slovensko',
+      slovenia: 'Slovinsko'
     },
     english: {
       title: 'Filters',
@@ -28,7 +30,9 @@ export default function FilterPanel({ filters, onChange, language }) {
       countries: 'Countries:',
       poland: 'Poland',
       germany: 'Germany',
-      austria: 'Austria'
+      austria: 'Austria',
+      slovakia: 'Slovakia',
+      slovenia: 'Slovenia'
     }
   };
 
@@ -111,7 +115,7 @@ export default function FilterPanel({ filters, onChange, language }) {
           <div>
             <div style={{ fontWeight: 'bold', marginBottom: '8px', color: '#333' }}>{t.countries}</div>
             <div style={{ display: 'flex', flexDirection: 'column', gap: '6px' }}>
-              {['Poland', 'Germany', 'Austria'].map(country => (
+              {['Poland', 'Germany', 'Austria', 'Slovakia', 'Slovenia'].map(country => (
                 <label key={country} style={{ display: 'flex', alignItems: 'center', cursor: 'pointer', color: '#333' }}>
                   <input
                     type="checkbox"
