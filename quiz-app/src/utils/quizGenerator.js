@@ -326,6 +326,11 @@ export function generateQuestion(allLocations, filteredLocations, countryFacts, 
   const includeFactQuestions = filters.categories.includes('facts');
   const includeNegativeQuestions = filters.categories.includes('negative');
   
+  // Filter country facts based on selected countries
+  const filteredCountryFacts = countryFacts.filter(fact => {
+    return filters.countries.length === 0 || filters.countries.includes(fact.country_english);
+  });
+  
   // For negative questions, we need to use all cities and regions from enabled countries
   // regardless of what location categories are selected
   if (includeNegativeQuestions) {
@@ -350,7 +355,8 @@ export function generateQuestion(allLocations, filteredLocations, countryFacts, 
     availableTypes.push('location');
   }
   
-  if (includeFactQuestions && countryFacts.length > 0) {
+  // Use filtered country facts for fact questions
+  if (includeFactQuestions && filteredCountryFacts.length > 0) {
     availableTypes.push('fact');
   }
   
@@ -371,8 +377,9 @@ export function generateQuestion(allLocations, filteredLocations, countryFacts, 
       const typeMatch = loc.type === 'city' || loc.type === 'region';
       return countryMatch && originMatch && typeMatch;
     });
-    return generateNegativeLocationQuestion(negativeFilteredLocations, countryFacts, language);
+    return generateNegativeLocationQuestion(negativeFilteredLocations, filteredCountryFacts, language);
   } else {
-    return generateFactQuestion(countryFacts, language);
+    // Use filtered country facts for fact questions
+    return generateFactQuestion(filteredCountryFacts, language);
   }
 }
