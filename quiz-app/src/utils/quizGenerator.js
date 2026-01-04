@@ -18,18 +18,31 @@ export function generateLocationQuestion(filteredLocations, language) {
     return null; // Not enough items to create a question
   }
   
-  // 1. Pick random location
-  const correct = randomPick(filteredLocations);
+  // 1. Group locations by type
+  const locationsByType = {
+    city: filteredLocations.filter(loc => loc.type === 'city'),
+    region: filteredLocations.filter(loc => loc.type === 'region'),
+    river: filteredLocations.filter(loc => loc.type === 'river')
+  };
   
-  // 2. Get 3 wrong answers of same type
-  const sameTypeLocations = filteredLocations.filter(loc => 
-    loc.type === correct.type && loc.id !== correct.id
+  // 2. Find types with enough locations (need 4 total: 1 correct + 3 wrong)
+  const availableTypes = Object.keys(locationsByType).filter(type => 
+    locationsByType[type].length >= 4
   );
   
-  if (sameTypeLocations.length < 3) {
-    return null; // Not enough items of same type
+  if (availableTypes.length === 0) {
+    return null; // No type has enough items
   }
   
+  // 3. Randomly select a type with equal probability
+  const selectedType = randomPick(availableTypes);
+  const locationsOfType = locationsByType[selectedType];
+  
+  // 4. Pick random location from selected type
+  const correct = randomPick(locationsOfType);
+  
+  // 5. Get 3 wrong answers of same type (excluding the correct one)
+  const sameTypeLocations = locationsOfType.filter(loc => loc.id !== correct.id);
   const wrong = randomPick(sameTypeLocations, 3);
   
   // 3. Shuffle options
