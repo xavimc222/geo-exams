@@ -1,0 +1,411 @@
+<maps>
+    <map id="image1" country_czech="Polsko" country_english="Poland">
+        <!-- Introduction Text -->
+        <text_item type="intro" location="header" position="top" origin="original" lat="52.2297" long="21.0122">
+            <czech>Polsko: členění - 16 vojvodství (kraje) – není to federace. Rozloha: 312 tis km² (9. MÍSTO). Počet obyvatel: 38 mil. Největší řeka: Visla, další: Odra.</czech>
+            <english>Poland: division - 16 voivodeships (regions) – not a federation. Area: 312k km² (9th PLACE). Population: 38 mil. Largest river: Vistula, others: Oder.</english>
+        </text_item>
+
+        <!-- Rivers -->
+        <text_item type="river" location="on_map" position="central" label_on_line="true" origin="original" lat="52.2297" long="21.0122">
+            <czech>Visla</czech>
+            <english>Vistula</english>
+        </text_item>
+        <text_item type="river" location="supplemental" position="west" origin="original" lat="53.4285" long="14.5528">
+            <czech>Odra</czech>
+            <english>Oder</english>
+        </text_item>
+
+        <!-- Regions (Voivodeships) -->
+        <text_item type="region" location="supplemental" position="north-west" origin="supplemental" lat="53.4285" long="14.5528">
+            <czech>Západopomořanské vojvodství</czech>
+            <english>West Pomeranian Voivodeship</english>
+        </text_item>
+        <text_item type="region" location="supplemental" position="north" origin="supplemental" lat="54.3520" long="18.6466">
+            <czech>Pomořanské vojvodství</czech>
+            <english>Pomeranian Voivodeship</english>
+        </text_item>
+        <text_item type="region" location="supplemental" position="north-east" origin="supplemental" lat="53.7784" long="20.4801">
+            <czech>Varmijsko-mazurské vojvodství</czech>
+            <english>Warmian-Masurian Voivodeship</english>
+        </text_item>
+        <text_item type="region" location="supplemental" position="north-east" origin="supplemental" lat="53.1325" long="23.1688">
+            <czech>Podlaské vojvodství</czech>
+            <english>Podlaskie Voivodeship</english>
+        </text_item>
+        <text_item type="region" location="supplemental" position="central" origin="supplemental" lat="52.2297" long="21.0122">
+            <czech>Mazovské vojvodství</czech>
+            <english>Masovian Voivodeship</english>
+        </text_item>
+        <text_item type="region" location="supplemental" position="central-north" origin="supplemental" lat="53.1235" long="18.0084">
+            <czech>Kujavsko-pomořanské vojvodství</czech>
+            <english>Kuyavian-Pomeranian Voivodeship</english>
+        </text_item>
+        <text_item type="region" location="supplemental" position="west-central" origin="supplemental" lat="52.4064" long="16.9252">
+            <czech>Velkopolské vojvodství</czech>
+            <english>Greater Poland Voivodeship</english>
+        </text_item>
+        <text_item type="region" location="supplemental" position="west" origin="supplemental" lat="51.9356" long="15.5062">
+            <czech>Lubušské vojvodství</czech>
+            <english>Lubusz Voivodeship</english>
+        </text_item>
+        <text_item type="region" location="supplemental" position="south-west" origin="supplemental" lat="51.1079" long="17.0385">
+            <czech>Dolnoslezské vojvodství</czech>
+            <english>Lower Silesian Voivodeship</english>
+        </text_item>
+        <text_item type="region" location="supplemental" position="south" origin="supplemental" lat="50.6751" long="17.9213">
+            <czech>Opolské vojvodství</czech>
+            <english>Opole Voivodeship</english>
+        </text_item>
+        <text_item type="region" location="supplemental" position="south" origin="supplemental" lat="50.2649" long="19.0238">
+            <czech>Slezské vojvodství</czech>
+            <english>Silesian Voivodeship</english>
+        </text_item>
+        <text_item type="region" location="supplemental" position="central" origin="supplemental" lat="51.7592" long="19.4560">
+            <czech>Lodžské vojvodství</czech>
+            <english>Łódź Voivodeship</english>
+        </text_item>
+        <text_item type="region" location="supplemental" position="south-central" origin="supplemental" lat="50.8661" long="20.6286">
+            <czech>Svatokřížské vojvodství</czech>
+            <english>Holy Cross Voivodeship</english>
+        </text_item>
+        <text_item type="region" location="supplemental" position="east" origin="supplemental" lat="51.2465" long="22.5684">
+            <czech>Lubelské vojvodství</czech>
+            <english>Lublin Voivodeship</english>
+        </text_item>
+        <text_item type="region" location="supplemental" position="south-east" origin="supplemental" lat="50.0647" long="19.9450">
+            <czech>Malopolské vojvodství</czech>
+            <english>Lesser Poland Voivodeship</english>
+        </text_item>
+        <text_item type="region" location="supplemental" position="south-east" origin="supplemental" lat="50.0412" long="21.9991">
+            <czech>Podkarpatské vojvodství</czech>
+            <english>Subcarpathian Voivodeship</english>
+        </text_item>
+
+        <!-- Cities -->
+        <text_item type="city" location="on_map" position="north-west" origin="original" lat="53.4285" long="14.5528">
+            <czech>Štětín</czech>
+            <english>Szczecin</english>
+        </text_item>
+        <text_item type="city" location="on_map" position="north" origin="original" lat="54.3520" long="18.6466">
+            <czech>Gdaňsk</czech>
+            <english>Gdańsk</english>
+        </text_item>
+        <text_item type="city" location="supplemental" position="north-east" origin="supplemental" lat="53.7784" long="20.4801">
+            <czech>Olsztyn</czech>
+            <english>Olsztyn</english>
+        </text_item>
+        <text_item type="city" location="on_map" position="east-north-east" correction_note="Corrected from handwriting" origin="original" lat="53.1325" long="23.1688">
+            <czech>Bělostok</czech>
+            <english>Białystok</english>
+        </text_item>
+        <text_item type="city" location="supplemental" position="central-north" origin="supplemental" lat="53.1235" long="18.0084">
+            <czech>Bydhošť</czech>
+            <english>Bydgoszcz</english>
+        </text_item>
+        <text_item type="city" location="on_map" position="west-central" origin="original" lat="52.4064" long="16.9252">
+            <czech>Poznaň</czech>
+            <english>Poznań</english>
+        </text_item>
+        <text_item type="city" location="supplemental" position="west" origin="supplemental" lat="51.9356" long="15.5062">
+            <czech>Zelená Hora</czech>
+            <english>Zielona Góra</english>
+        </text_item>
+        <text_item type="city" location="on_map" position="east-central" origin="original" lat="52.2297" long="21.0122">
+            <czech>Varšava</czech>
+            <english>Warsaw</english>
+        </text_item>
+        <text_item type="city" location="on_map" position="central" origin="original" lat="51.7592" long="19.4560">
+            <czech>Loď</czech>
+            <english>Łódź</english>
+        </text_item>
+        <text_item type="city" location="supplemental" position="east" origin="supplemental" lat="51.2465" long="22.5684">
+            <czech>Lublin</czech>
+            <english>Lublin</english>
+        </text_item>
+        <text_item type="city" location="supplemental" position="south-central" origin="supplemental" lat="50.8661" long="20.6286">
+            <czech>Kielce</czech>
+            <english>Kielce</english>
+        </text_item>
+        <text_item type="city" location="on_map" position="south-west" origin="original" lat="51.1079" long="17.0385">
+            <czech>Vratislav</czech>
+            <english>Wrocław</english>
+        </text_item>
+        <text_item type="city" location="supplemental" position="south" origin="supplemental" lat="50.6751" long="17.9213">
+            <czech>Opole</czech>
+            <english>Opole</english>
+        </text_item>
+        <text_item type="city" location="supplemental" position="south" origin="supplemental" lat="50.2649" long="19.0238">
+            <czech>Katovice</czech>
+            <english>Katowice</english>
+        </text_item>
+        <text_item type="city" location="on_map" position="south" origin="original" lat="50.0647" long="19.9450">
+            <czech>Krakov</czech>
+            <english>Krakow</english>
+        </text_item>
+        <text_item type="city" location="supplemental" position="south-east" origin="supplemental" lat="50.0412" long="21.9991">
+            <czech>Řešov</czech>
+            <english>Rzeszów</english>
+        </text_item>
+    </map>
+
+    <map id="image2" country_czech="Rakousko" country_english="Austria">
+        <!-- Introduction Text -->
+        <text_item type="intro" location="generated" position="top" origin="generated" lat="48.2082" long="16.3738">
+            <czech>Rakousko: členění - 9 spolkových zemí – je to federace. Rozloha: 84 tis km². Počet obyvatel: 9 mil. Největší řeka: Dunaj, další: Inn.</czech>
+            <english>Austria: division - 9 federal states – it is a federation. Area: 84,000 km². Population: 9 mil. Largest river: Danube, others: Inn.</english>
+        </text_item>
+
+        <!-- Rivers -->
+        <text_item type="river" location="supplemental" position="north" origin="supplemental" lat="48.3069" long="14.2858">
+            <czech>Dunaj</czech>
+            <english>Danube</english>
+        </text_item>
+        <text_item type="river" location="supplemental" position="west" origin="supplemental" lat="47.2692" long="11.4041">
+            <czech>Inn</czech>
+            <english>Inn</english>
+        </text_item>
+
+        <!-- Regions (Federal States) -->
+        <text_item type="region" location="on_map" position="far-west" correction_note="Corrected spelling from Vorarlbers" origin="original" lat="47.5008" long="9.7423">
+            <czech>Vorarlbersko</czech>
+            <english>Vorarlberg</english>
+        </text_item>
+        <text_item type="region" location="on_map" position="west" origin="original" lat="47.2692" long="11.4041">
+            <czech>Tyrolsko</czech>
+            <english>Tyrol</english>
+        </text_item>
+        <text_item type="region" location="on_map" position="west-central" origin="original" lat="47.8095" long="13.0550">
+            <czech>Salcbursko</czech>
+            <english>Salzburg</english>
+        </text_item>
+        <text_item type="region" location="on_map" position="north-east" origin="original" lat="48.3069" long="14.2858">
+            <czech>Horní Rakousko</czech>
+            <english>Upper Austria</english>
+        </text_item>
+        <text_item type="region" location="on_map" position="east" origin="original" lat="48.2044" long="15.6329">
+            <czech>Dolní Rakousko</czech>
+            <english>Lower Austria</english>
+        </text_item>
+        <text_item type="region" location="on_map" position="east-central" origin="original" lat="48.2082" long="16.3738">
+            <czech>Vídeň</czech>
+            <english>Vienna</english>
+        </text_item>
+        <text_item type="region" location="on_map" position="far-east" correction_note="Corrected hyphenation from Burgen- land" origin="original" lat="47.8450" long="16.5336">
+            <czech>Burgenland</czech>
+            <english>Burgenland</english>
+        </text_item>
+        <text_item type="region" location="on_map" position="south-east" origin="original" lat="47.0707" long="15.4395">
+            <czech>Štýrsko</czech>
+            <english>Styria</english>
+        </text_item>
+        <text_item type="region" location="on_map" position="south-west" origin="original" lat="46.6365" long="14.3122">
+            <czech>Korutany</czech>
+            <english>Carinthia</english>
+        </text_item>
+
+        <!-- Cities -->
+        <text_item type="city" location="supplemental" position="far-west" origin="supplemental" lat="47.5008" long="9.7423">
+            <czech>Bregenz</czech>
+            <english>Bregenz</english>
+        </text_item>
+        <text_item type="city" location="on_map" position="west-central" origin="original" lat="47.2692" long="11.4041">
+            <czech>Innsbruck</czech>
+            <english>Innsbruck</english>
+        </text_item>
+        <text_item type="city" location="on_map" position="west-central" origin="original" lat="47.8095" long="13.0550">
+            <czech>Salcburk</czech>
+            <english>Salzburg</english>
+        </text_item>
+        <text_item type="city" location="on_map" position="north-east-central" origin="original" lat="48.3069" long="14.2858">
+            <czech>Linec</czech>
+            <english>Linz</english>
+        </text_item>
+        <text_item type="city" location="supplemental" position="east" origin="supplemental" lat="48.2044" long="15.6329">
+            <czech>Sankt Pölten</czech>
+            <english>St. Pölten</english>
+        </text_item>
+        <text_item type="city" location="on_map" position="east-central" origin="original" lat="48.2082" long="16.3738">
+            <czech>Vídeň</czech>
+            <english>Vienna</english>
+        </text_item>
+        <text_item type="city" location="supplemental" position="far-east" origin="supplemental" lat="47.8450" long="16.5336">
+            <czech>Eisenstadt</czech>
+            <english>Eisenstadt</english>
+        </text_item>
+        <text_item type="city" location="on_map" position="south-east" correction_note="Extracted from region label context" origin="original" lat="47.0707" long="15.4395">
+            <czech>Štýrský Hradec</czech>
+            <english>Graz</english>
+        </text_item>
+        <text_item type="city" location="on_map" position="south-west" origin="original" lat="46.6365" long="14.3122">
+            <czech>Klagenfurt</czech>
+            <english>Klagenfurt</english>
+        </text_item>
+    </map>
+
+    <map id="image3" country_czech="Německo" country_english="Germany">
+        <!-- Introduction Text -->
+        <text_item type="intro" location="generated" position="top" origin="generated" lat="52.5200" long="13.4050">
+            <czech>Německo: členění - 16 spolkových zemí – je to federace. Rozloha: 357 tis km². Počet obyvatel: 84 mil. Největší řeka: Rýn, další: Labe, Dunaj.</czech>
+            <english>Germany: division - 16 federal states – it is a federation. Area: 357,000 km². Population: 84 mil. Largest river: Rhine, others: Elbe, Danube.</english>
+        </text_item>
+
+        <!-- Rivers -->
+        <text_item type="river" location="supplemental" position="west" origin="supplemental" lat="50.9375" long="6.9603">
+            <czech>Rýn</czech>
+            <english>Rhine</english>
+        </text_item>
+        <text_item type="river" location="supplemental" position="east" origin="supplemental" lat="53.5488" long="9.9872">
+            <czech>Labe</czech>
+            <english>Elbe</english>
+        </text_item>
+
+        <!-- Regions (Federal States) -->
+        <text_item type="region" location="supplemental" position="north" origin="supplemental" lat="54.3233" long="10.1228">
+            <czech>Šlesvicko-Holštýnsko</czech>
+            <english>Schleswig-Holstein</english>
+        </text_item>
+        <text_item type="region" location="supplemental" position="north" origin="supplemental" lat="53.5488" long="9.9872">
+            <czech>Hamburk</czech>
+            <english>Hamburg</english>
+        </text_item>
+        <text_item type="region" location="supplemental" position="north-east" origin="supplemental" lat="53.6355" long="11.4012">
+            <czech>Meklenbursko-Přední Pomořansko</czech>
+            <english>Mecklenburg-Vorpommern</english>
+        </text_item>
+        <text_item type="region" location="supplemental" position="north-west" origin="supplemental" lat="53.0793" long="8.8017">
+            <czech>Brémy</czech>
+            <english>Bremen</english>
+        </text_item>
+        <text_item type="region" location="supplemental" position="north-west" origin="supplemental" lat="52.3759" long="9.7320">
+            <czech>Dolní Sasko</czech>
+            <english>Lower Saxony</english>
+        </text_item>
+        <text_item type="region" location="supplemental" position="north-east" origin="supplemental" lat="52.3960" long="13.0556">
+            <czech>Braniborsko</czech>
+            <english>Brandenburg</english>
+        </text_item>
+        <text_item type="region" location="supplemental" position="east" origin="supplemental" lat="52.5200" long="13.4050">
+            <czech>Berlín</czech>
+            <english>Berlin</english>
+        </text_item>
+        <text_item type="region" location="supplemental" position="central" origin="supplemental" lat="52.1205" long="11.6276">
+            <czech>Sasko-Anhaltsko</czech>
+            <english>Saxony-Anhalt</english>
+        </text_item>
+        <text_item type="region" location="supplemental" position="east" origin="supplemental" lat="51.0504" long="13.7373">
+            <czech>Sasko</czech>
+            <english>Saxony</english>
+        </text_item>
+        <text_item type="region" location="supplemental" position="central" origin="supplemental" lat="50.9848" long="11.0299">
+            <czech>Durynsko</czech>
+            <english>Thuringia</english>
+        </text_item>
+        <text_item type="region" location="supplemental" position="west" origin="supplemental" lat="51.2277" long="6.7735">
+            <czech>Severní Porýní-Vestfálsko</czech>
+            <english>North Rhine-Westphalia</english>
+        </text_item>
+        <text_item type="region" location="supplemental" position="central-west" origin="supplemental" lat="50.0782" long="8.2398">
+            <czech>Hesensko</czech>
+            <english>Hesse</english>
+        </text_item>
+        <text_item type="region" location="supplemental" position="west" origin="supplemental" lat="49.9929" long="8.2473">
+            <czech>Porýní-Falc</czech>
+            <english>Rhineland-Palatinate</english>
+        </text_item>
+        <text_item type="region" location="supplemental" position="south-west" origin="supplemental" lat="49.2326" long="6.9995">
+            <czech>Sársko</czech>
+            <english>Saarland</english>
+        </text_item>
+        <text_item type="region" location="supplemental" position="south-west" origin="supplemental" lat="48.7758" long="9.1829">
+            <czech>Bádensko-Württembersko</czech>
+            <english>Baden-Württemberg</english>
+        </text_item>
+        <text_item type="region" location="supplemental" position="south-east" origin="supplemental" lat="48.1351" long="11.5820">
+            <czech>Bavorsko</czech>
+            <english>Bavaria</english>
+        </text_item>
+
+        <!-- Cities -->
+        <text_item type="city" location="supplemental" position="north" origin="supplemental" lat="54.3233" long="10.1228">
+            <czech>Kiel</czech>
+            <english>Kiel</english>
+        </text_item>
+        <text_item type="city" location="on_map" position="north" origin="original" lat="53.5488" long="9.9872">
+            <czech>Hamburk</czech>
+            <english>Hamburg</english>
+        </text_item>
+        <text_item type="city" location="supplemental" position="north-east" origin="supplemental" lat="53.6355" long="11.4012">
+            <czech>Schwerin</czech>
+            <english>Schwerin</english>
+        </text_item>
+        <text_item type="city" location="on_map" position="north-west" origin="original" lat="53.0793" long="8.8017">
+            <czech>Brémy</czech>
+            <english>Bremen</english>
+        </text_item>
+        <text_item type="city" location="on_map" position="north-central" origin="original" lat="52.3759" long="9.7320">
+            <czech>Hannover</czech>
+            <english>Hanover</english>
+        </text_item>
+        <text_item type="city" location="on_map" position="east-central" origin="original" lat="52.3960" long="13.0556">
+            <czech>Postupim</czech>
+            <english>Potsdam</english>
+        </text_item>
+        <text_item type="city" location="on_map" position="east-central" origin="original" lat="52.5200" long="13.4050">
+            <czech>Berlín</czech>
+            <english>Berlin</english>
+        </text_item>
+        <text_item type="city" location="on_map" position="north-central" origin="original" lat="52.1205" long="11.6276">
+            <czech>Magdeburk</czech>
+            <english>Magdeburg</english>
+        </text_item>
+        <text_item type="city" location="on_map" position="east" origin="original" lat="51.3397" long="12.3731">
+            <czech>Lipsko</czech>
+            <english>Leipzig</english>
+        </text_item>
+        <text_item type="city" location="on_map" position="east-south-east" origin="original" lat="51.0504" long="13.7373">
+            <czech>Drážďany</czech>
+            <english>Dresden</english>
+        </text_item>
+        <text_item type="city" location="supplemental" position="central" origin="supplemental" lat="50.9848" long="11.0299">
+            <czech>Erfurt</czech>
+            <english>Erfurt</english>
+        </text_item>
+        <text_item type="city" location="on_map" position="west" origin="original" lat="50.9375" long="6.9603">
+            <czech>Kolín nad Rýnem</czech>
+            <english>Cologne</english>
+        </text_item>
+        <text_item type="city" location="supplemental" position="west" origin="supplemental" lat="51.2277" long="6.7735">
+            <czech>Düsseldorf</czech>
+            <english>Düsseldorf</english>
+        </text_item>
+        <text_item type="city" location="on_map" position="south-west-central" origin="original" lat="50.1109" long="8.6821">
+            <czech>Frankfurt nad Mohanem</czech>
+            <english>Frankfurt</english>
+        </text_item>
+        <text_item type="city" location="supplemental" position="central-west" origin="supplemental" lat="50.0782" long="8.2398">
+            <czech>Wiesbaden</czech>
+            <english>Wiesbaden</english>
+        </text_item>
+        <text_item type="city" location="supplemental" position="west" origin="supplemental" lat="49.9929" long="8.2473">
+            <czech>Mohuč</czech>
+            <english>Mainz</english>
+        </text_item>
+        <text_item type="city" location="supplemental" position="south-west" origin="supplemental" lat="49.2326" long="6.9995">
+            <czech>Saarbrücken</czech>
+            <english>Saarbrücken</english>
+        </text_item>
+        <text_item type="city" location="on_map" position="south-west" correction_note="Corrected hyphenation from Štut- gart" origin="original" lat="48.7758" long="9.1829">
+            <czech>Stuttgart</czech>
+            <english>Stuttgart</english>
+        </text_item>
+        <text_item type="city" location="on_map" position="south-central" origin="original" lat="49.4521" long="11.0767">
+            <czech>Norimberk</czech>
+            <english>Nuremberg</english>
+        </text_item>
+        <text_item type="city" location="on_map" position="south" origin="original" lat="48.1351" long="11.5820">
+            <czech>Mnichov</czech>
+            <english>Munich</english>
+        </text_item>
+    </map>
+</maps>
